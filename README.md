@@ -1,6 +1,6 @@
 # mi-vmpro-md
 
-AngualrJS app for VideoManager based on angular-material.
+AngularJS app for VideoManager based on angular-material.
 
 [![GitHub version](https://badge.fury.io/gh/dasrick%2Fmi-vmpro-md.svg)](http://badge.fury.io/gh/dasrick%2Fmi-vmpro-md)
 [![Build Status](https://travis-ci.org/dasrick/mi-vmpro-md.svg?branch=master)](https://travis-ci.org/dasrick/mi-vmpro-md)
