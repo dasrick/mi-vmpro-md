@@ -14,18 +14,10 @@ var requires = [
 ];
 
 angular.module('mi-vmpro-md-app', requires)
-  // material - theming ////////////////////////////////////////////////////////////////////////////////////////////////
-  //.config(function ($mdThemingProvider) {
-  //  $mdThemingProvider.theme('default')
-  //    .primaryPalette('green')
-  //    //.accentPalette('orange')
-  //  ;
-  //})
-  // ===================================================================================================================
 
-  // material - theming ABSOLUTELY CUSTOM //////////////////////////////////////////////////////////////////////////////
+  // material - theming - custom style for mi24 ////////////////////////////////////////////////////////////////////////
   .config(function ($mdThemingProvider) {
-    $mdThemingProvider.definePalette('mi24', {
+    $mdThemingProvider.definePalette('mi24-primary', {
       '50': '#e6f4eb',
       '100': '#b3dfc4',
       '200': '#80c99c',
@@ -52,9 +44,10 @@ angular.module('mi-vmpro-md-app', requires)
       //'contrastLightColors': undefined
     });
     $mdThemingProvider.theme('default')
-      .primaryPalette('mi24')
+      .primaryPalette('mi24-primary')
   })
   // ===================================================================================================================
+
 ;
 
 angular.bootstrap(document, ['mi-vmpro-md-app']);
