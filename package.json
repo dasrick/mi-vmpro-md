@@ -22,14 +22,28 @@
   },
   "devDependencies": {
     "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-aria": "^1.4.7",
+    "angular-material": "^0.11.2",
+    "angular-ui-router": "^0.2.15",
+    "clean-css": "^3.4.5",
     "david": "^6.2.0",
+    "fs-extra": "^0.24.0",
+    "glob": "^5.0.15",
     "json-loader": "^0.5.3",
+    "less": "^2.5.3",
+    "less-plugin-autoprefix": "^1.5.1",
     "ng-annotate-loader": "0.0.10",
     "webpack": "^1.12.2"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:js": "webpack src/app.js web/js/app.js"
+    "prebuild": "mkdir -p web/js web/css web/views",
+    "build": "npm run build:js && npm run build:css && npm run build:views",
+    "build:css": "lessc --autoprefix='last 2 versions,ie 9' src/media/less/style.less web/css/style.css && cleancss --source-map -o web/css/style.min.css web/css/style.css",
+    "build:js": "webpack src/app.js web/js/app.js",
+    "build:views": "node scripts/copy.js src/**/views/*.html web/views/"
   }
 }
